@@ -12,7 +12,11 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+MEDIA_ROOT = BASE_DIR + '/media/'
 
+TEMPLATE_DIRS = (
+    BASE_DIR + '/templates/'
+)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
@@ -32,10 +36,12 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'registration'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -80,3 +86,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+ACCOUNT_ACTIVATION_DAYS = 7
