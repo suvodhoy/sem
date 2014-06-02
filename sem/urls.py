@@ -1,5 +1,4 @@
 from django.conf.urls import patterns, include, url
-from django.shortcuts import render
 from django.contrib import admin
 admin.autodiscover()
 
@@ -10,6 +9,5 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.backends.default.urls')),
-    (r'^$', render,
-            { 'template': 'index.html' }, 'index'),
+    url(r'^$', 'sem.views.index', name='index'),
 )

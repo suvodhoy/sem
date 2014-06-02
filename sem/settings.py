@@ -88,3 +88,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 ACCOUNT_ACTIVATION_DAYS = 7
+
+SITE_ID = 1
