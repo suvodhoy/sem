@@ -13,7 +13,13 @@ import os
 from os import environ
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-PASSWORD = environ.get("PASSWORD")
+DB_PASSWORD = environ.get("DB_PASSWORD")
+DB_NAME = environ.get("DB_NAME")
+DB_USER = environ.get("DB_USER")
+DB_HOST = environ.get("DB_HOST")
+DB_PORT = environ.get("DB_PORT")
+
+
 
 MEDIA_ROOT = BASE_DIR + '/media/'
 
@@ -68,13 +74,13 @@ WSGI_APPLICATION = 'sem.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'easysemprod', # Or path to database file if using sqlite3.
+        'NAME': DB_NAME, # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': 'dbuser',
-        'PASSWORD': PASSWORD,
-        'HOST': 'localhost',
+        'USER': DB_USER,
+        'PASSWORD': DB_PASSWORD,
+        'HOST': DB_HOST,
         # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
-        'PORT': '', # Set to empty string for default.
+        'PORT': DB_PORT, # Set to empty string for default.
     }
 }
 
