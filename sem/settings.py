@@ -18,6 +18,7 @@ DB_NAME = environ.get("DB_NAME")
 DB_USER = environ.get("DB_USER")
 DB_HOST = environ.get("DB_HOST")
 DB_PORT = environ.get("DB_PORT")
+EMAIL_PASS = environ.get("EMAIL_PASS")
 
 
 
@@ -108,3 +109,10 @@ ACCOUNT_ACTIVATION_DAYS = 7
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = "/"
+
+EMAIL_HOST = 'smtp.mandrillapp.com'
+EMAIL_HOST_USER = 'contact@easysemtools.com'
+EMAIL_HOST_PASSWORD = EMAIL_PASS
+EMAIL_PORT = 587
+
+DEFAULT_FROM_EMAIL = 'contact@easysemtools.com'
